@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TechBlogMiniProject.Application.Features.Mediatr.Commands.ArticleCommands;
@@ -21,7 +22,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> CategoryList()
+        public async Task<IActionResult> ArticleList()
         {
             var values = await _mediator.Send(new GetAllArticlesQuery());
             return Ok(values);
@@ -43,6 +44,8 @@ namespace TechBlogMiniProject.WebApi.Controllers
             return Ok(values);
         }
 
+        [Authorize(AuthenticationSchemes = "Bearer")]
+
         [HttpGet("GetArticlesByUserId/{userId}")]
 
         public async Task<IActionResult> GetArticlesByUserId(string userId)
@@ -51,6 +54,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
             return Ok(values);
         }
 
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveArticle(int id)
@@ -59,6 +63,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
            return Ok("Article removed Successfully");
         }
 
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPost]
 
         public async Task<IActionResult> CreateArticle(CreateArticleCommand command)
@@ -67,6 +72,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
             return Ok("Article created Successfully");
         }
 
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPut]
 
         public async Task<IActionResult> UpdateArticle(UpdateArticleCommand command)

@@ -21,7 +21,10 @@ namespace TechBlogMiniProject.Application.Features.Mediatr.Handlers.ArticleHandl
         }
         public async Task<List<GetRecent4ArticlesQueryResult>> Handle(GetRecent4ArticlesQuery request, CancellationToken cancellationToken)
         {
-            var values = _articleReadRepository.Table.Include(x => x.Category).Include(y => y.AppUser).Take(4);
+            var values = _articleReadRepository.Table.Include(x => x.Category)
+                                                     .Include(y => y.AppUser)
+                                                     .OrderByDescending(x=>x.CreatedDate)
+                                                     .Take(4);
 
             return values.Select(x => new GetRecent4ArticlesQueryResult
             {
