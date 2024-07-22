@@ -1,0 +1,102 @@
+﻿@model RegisterDto 
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<section id="register-section">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-3 mb-lg-0">
+                <div class="register-form">
+                    <h4>Register</h4>
+                    <form method="post" asp-controller="Account" asp-action="Register">
+                        <div class="row">
+                            <div class="col-lg-6 mb-20">
+                                <div class="name">
+                                    <label for="">Name</label>
+                                    <input class="form-control"
+                                           type="text"
+                                           placeholder="Enter your name"
+                                           asp-for="Name"/>
+                                           <span class="text-danger" asp-validation-for="Name"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-20">
+                                <div class="surname">
+                                    <label for="">Surname</label>
+                                    <input class="form-control"
+                                           type="text"
+                                           placeholder="Enter your surname"
+                                           asp-for="Surname"/>
+                                    <span class="text-danger" asp-validation-for="Surname"></span>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mb-20">
+                                <div class="email">
+                                    <label for="">Email</label>
+                                    <input class="form-control"
+                                           type="email"
+                                           placeholder="Enter your email address here"
+                                           asp-for="Email" />
+                                    <span class="text-danger" asp-validation-for="Email"></span>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mb-20">
+                                <div class="email">
+                                    <label for="">Username</label>
+                                    <input class="form-control"
+                                           type="text"
+                                           placeholder="Enter your username here"
+                                           asp-for="Username" />
+                                    <span class="text-danger" asp-validation-for="Username"></span>
+
+                                </div>
+                            </div>
+                          
+                            <div class="col-lg-6 mb-20">
+                                <div class="password">
+                                    <label for="">Password</label>
+                                    <input class="form-control"
+                                           type="password"
+                                           placeholder="Enter your password"
+                                           asp-for="Password"/>
+                                    <span class="text-danger" asp-validation-for="Password"></span>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-20">
+                                <div class="conf-password">
+                                    <label for="">Confirm Password</label>
+                                    <input class="form-control"
+                                           type="password"
+                                           placeholder="Repeat your password "
+                                           asp-for="ConfirmPassword"/>
+                                    <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="reg-btn">
+                                    <button type="submit" class="btn">Register</button>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 mb-3">
+                                <div class="account">
+                                    <p>
+                                        Already have an account?
+                                        <a href="/Account/Login/">Login</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

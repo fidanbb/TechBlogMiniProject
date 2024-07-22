@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using TechBlogMiniProject.Domain.Entities;
 
 namespace TechBlogMiniProject.Persistence.Context
 {
-	public class TechBlogContext:DbContext
+	public class TechBlogContext: IdentityDbContext<AppUser>
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TechBlogMiniProject.Application.Features.Mediatr.Commands.CategoryCommands;
@@ -16,6 +17,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
 		{
 			_mediator = mediator;
 		}
+		
 
 		[HttpGet]
 
@@ -32,6 +34,8 @@ namespace TechBlogMiniProject.WebApi.Controllers
 			var value = await _mediator.Send(new GetCategoryByIdQuey(id));
 			return Ok(value);
 		}
+
+		[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
 		[HttpDelete("{id}")]
 
 		public async Task<IActionResult> RemoveCategory(int id)
@@ -40,6 +44,8 @@ namespace TechBlogMiniProject.WebApi.Controllers
 			return Ok("Category Removed successfully");
 		}
 
+		[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
+
 		[HttpPost]
 
 		public async Task<IActionResult> CreateCategory(CreateCategoryCommand command)
@@ -47,6 +53,8 @@ namespace TechBlogMiniProject.WebApi.Controllers
 			await _mediator.Send(command);
 			return Ok("Category Added successfully");
 		}
+
+		[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
 
 		[HttpPut]
 

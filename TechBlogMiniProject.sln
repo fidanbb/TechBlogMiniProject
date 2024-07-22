@@ -5,17 +5,23 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{7E33C654-96AD-4E90-BD8B-0DB5548C8CD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechBlogMiniProject.Domain", "Core\TechBlogMiniProject.Domain\TechBlogMiniProject.Domain.csproj", "{C5902DFA-CA2B-4BA8-8237-BA186E8B212F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechBlogMiniProject.Domain", "Core\TechBlogMiniProject.Domain\TechBlogMiniProject.Domain.csproj", "{C5902DFA-CA2B-4BA8-8237-BA186E8B212F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechBlogMiniProject.Application", "Core\TechBlogMiniProject.Application\TechBlogMiniProject.Application.csproj", "{F4864169-4436-456B-849C-70F8397CB565}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechBlogMiniProject.Application", "Core\TechBlogMiniProject.Application\TechBlogMiniProject.Application.csproj", "{F4864169-4436-456B-849C-70F8397CB565}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B3A72997-43A3-43C8-8F20-A6C62DC4A83B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechBlogMiniProject.Persistence", "Infrastructure\TechBlogMiniProject.Persistence\TechBlogMiniProject.Persistence.csproj", "{F50F52C9-B41A-470A-94F4-3CE1347A4F7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechBlogMiniProject.Persistence", "Infrastructure\TechBlogMiniProject.Persistence\TechBlogMiniProject.Persistence.csproj", "{F50F52C9-B41A-470A-94F4-3CE1347A4F7F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{1AA7DD60-27CD-4F6F-A137-79DEB59924FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechBlogMiniProject.WebApi", "Presentation\TechBlogMiniProject.WebApi\TechBlogMiniProject.WebApi.csproj", "{6231B534-379B-4AAB-96BB-F852D5B12D56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechBlogMiniProject.WebApi", "Presentation\TechBlogMiniProject.WebApi\TechBlogMiniProject.WebApi.csproj", "{6231B534-379B-4AAB-96BB-F852D5B12D56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{CD8A58EF-44D7-4B2C-8FBD-3324AB4019AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechBlogMiniProject.WebUI", "Frontends\TechBlogMiniProject.WebUI\TechBlogMiniProject.WebUI.csproj", "{3A251B3D-E69C-421C-A294-1E2ABEBFDF7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechBlogMiniProject.Dtos", "Frontends\TechBlogMiniProject.Dtos\TechBlogMiniProject.Dtos.csproj", "{5264CDAE-AE21-466F-8355-305AB3D78F1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,14 @@ Global
 		{6231B534-379B-4AAB-96BB-F852D5B12D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6231B534-379B-4AAB-96BB-F852D5B12D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6231B534-379B-4AAB-96BB-F852D5B12D56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A251B3D-E69C-421C-A294-1E2ABEBFDF7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A251B3D-E69C-421C-A294-1E2ABEBFDF7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A251B3D-E69C-421C-A294-1E2ABEBFDF7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A251B3D-E69C-421C-A294-1E2ABEBFDF7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5264CDAE-AE21-466F-8355-305AB3D78F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5264CDAE-AE21-466F-8355-305AB3D78F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5264CDAE-AE21-466F-8355-305AB3D78F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5264CDAE-AE21-466F-8355-305AB3D78F1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +62,8 @@ Global
 		{F4864169-4436-456B-849C-70F8397CB565} = {7E33C654-96AD-4E90-BD8B-0DB5548C8CD7}
 		{F50F52C9-B41A-470A-94F4-3CE1347A4F7F} = {B3A72997-43A3-43C8-8F20-A6C62DC4A83B}
 		{6231B534-379B-4AAB-96BB-F852D5B12D56} = {1AA7DD60-27CD-4F6F-A137-79DEB59924FD}
+		{3A251B3D-E69C-421C-A294-1E2ABEBFDF7F} = {CD8A58EF-44D7-4B2C-8FBD-3324AB4019AA}
+		{5264CDAE-AE21-466F-8355-305AB3D78F1D} = {CD8A58EF-44D7-4B2C-8FBD-3324AB4019AA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C78DD82C-4211-45C6-8EE4-C0F2BC57F9F6}

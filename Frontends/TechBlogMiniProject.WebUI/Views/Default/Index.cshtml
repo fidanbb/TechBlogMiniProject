@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @await Component.InvokeAsync("_HeadUILayoutComponentPartial")
+
+</head>
+<body>
+
+    @await Component.InvokeAsync("_NavbarUILayoutComponentPartial")
+    @await Component.InvokeAsync("_DefaultCoverUILayoutComponentPartial")
+    <!-- END nav -->
+
+    <section class="ftco-section ftco-no-pt bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+                    <span class="subheading">What We Offer</span>
+                    <h2 class="mb-2">Featured Articles</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="carousel-car owl-carousel">
+                        <div class="item">
+                            <div class="article-wrap rounded ftco-animate">
+                                <div class="img rounded d-flex align-items-end" style="background-image: url(images/article-1.jpg);">
+                                </div>
+                                <div class="text">
+                                    <h2 class="mb-0"><a href="#">Understanding AI and Machine Learning</a></h2>
+                                    <div class="d-flex mb-3">
+                                        <span class="cat">Technology</span>
+                                        <p class="date ml-auto">March 20, 2024</p>
+                                    </div>
+                                    <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Read More</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="article-wrap rounded ftco-animate">
+                                <div class="img rounded d-flex align-items-end" style="background-image: url(images/article-2.jpg);">
+                                </div>
+                                <div class="text">
+                                    <h2 class="mb-0"><a href="#">The Future of Quantum Computing</a></h2>
+                                    <div class="d-flex mb-3">
+                                        <span class="cat">Innovation</span>
+                                        <p class="date ml-auto">April 5, 2024</p>
+                                    </div>
+                                    <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Read More</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="article-wrap rounded ftco-animate">
+                                <div class="img rounded d-flex align-items-end" style="background-image: url(images/article-3.jpg);">
+                                </div>
+                                <div class="text">
+                                    <h2 class="mb-0"><a href="#">Blockchain Beyond Cryptocurrency</a></h2>
+                                    <div class="d-flex mb-3">
+                                        <span class="cat">Blockchain</span>
+                                        <p class="date ml-auto">May 15, 2024</p>
+                                    </div>
+                                    <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Read More</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="article-wrap rounded ftco-animate">
+                                <div class="img rounded d-flex align-items-end" style="background-image: url(images/article-4.jpg);">
+                                </div>
+                                <div class="text">
+                                    <h2 class="mb-0"><a href="#">The Rise of Cybersecurity Threats</a></h2>
+                                    <div class="d-flex mb-3">
+                                        <span class="cat">Security</span>
+                                        <p class="date ml-auto">June 10, 2024</p>
+                                    </div>
+                                    <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Read More</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="ftco-section testimony-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7 text-center heading-section ftco-animate">
+                    <span class="subheading">Testimonials</span>
+                    <h2 class="mb-3">What Our Readers Say</h2>
+                </div>
+            </div>
+            <div class="row ftco-animate">
+                <div class="col-md-12">
+                    <div class="carousel-testimony owl-carousel ftco-owl">
+                        <div class="item">
+                            <div class="testimony-wrap rounded text-center py-4 pb-5">
+                                <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)">
+                                </div>
+                                <div class="text pt-4">
+                                    <p class="mb-4">This blog has been my go-to source for the latest in tech trends and insights. The articles are always informative and well-written.</p>
+                                    <p class="name">Alex Johnson</p>
+                                    <span class="position">Software Engineer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony-wrap rounded text-center py-4 pb-5">
+                                <div class="user-img mb-2" style="background-image: url(images/person_2.jpg)">
+                                </div>
+                                <div class="text pt-4">
+                                    <p class="mb-4">I appreciate the depth of analysis and the quality of the content. It's clear that the authors are experts in their fields.</p>
+                                    <p class="name">William Williams</p>
+                                    <span class="position">Tech Enthusiast</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony-wrap rounded text-center py-4 pb-5">
+                                <div class="user-img mb-2" style="background-image: url(images/person_3.jpg)">
+                                </div>
+                                <div class="text pt-4">
+                                    <p class="mb-4">A fantastic resource for anyone looking to stay updated on the latest technological advancements. Highly recommended!</p>
+                                    <p class="name">Michael Brown</p>
+                                    <span class="position">IT Consultant</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony-wrap rounded text-center py-4 pb-5">
+                                <div class="user-img mb-2" style="background-image: url(images/person_5.jpg)">
+                                </div>
+                                <div class="text pt-4">
+                                    <p class="mb-4">I always look forward to new posts. The writing is engaging and the topics are always relevant to current tech trends.</p>
+                                    <p class="name">Emily Davis</p>
+                                    <span class="position">Web Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony-wrap rounded text-center py-4 pb-5">
+                                <div class="user-img mb-2" style="background-image: url(images/person_4.jpg)">
+                                </div>
+                                <div class="text pt-4">
+                                    <p class="mb-4">The tech blog has provided me with invaluable insights that have helped me in my career. A must-read for anyone in the tech industry.</p>
+                                    <p class="name">Chris Taylor</p>
+                                    <span class="position">System Analyst</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+
+
+    @await Component.InvokeAsync("_FooterUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_ScriptUILayoutComponentPartial")
+
+
+
+</body>
+</html>
+
+
+
+
+
+
