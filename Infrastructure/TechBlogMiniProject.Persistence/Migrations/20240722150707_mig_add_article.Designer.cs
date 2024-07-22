@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechBlogMiniProject.Persistence.Context;
 
@@ -11,9 +12,11 @@ using TechBlogMiniProject.Persistence.Context;
 namespace TechBlogMiniProject.Persistence.Migrations
 {
     [DbContext(typeof(TechBlogContext))]
-    partial class TechBlogContextModelSnapshot : ModelSnapshot
+    [Migration("20240722150707_mig_add_article")]
+    partial class mig_add_article
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

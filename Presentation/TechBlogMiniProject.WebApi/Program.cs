@@ -16,6 +16,8 @@ using TechBlogMiniProject.Persistence.Services.User;
 using TechBlogMiniProject.Application.Services.Token;
 using TechBlogMiniProject.Persistence.Services.Token;
 using TechBlogMiniProject.WebApi.Injections;
+using TechBlogMiniProject.Application.Repositories.ArticleRepositories;
+using TechBlogMiniProject.Persistence.Repositories.ArticleRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -68,6 +70,8 @@ builder.Services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>)
 
 builder.Services.AddScoped<ICategoryReadRepository, CategoryReadRepository>();
 builder.Services.AddScoped<ICategoryWriteRepository, CategoryWriteRepository>();
+builder.Services.AddScoped<IArticleReadRepository, ArticleReadRepository>();
+builder.Services.AddScoped<IArticleWriteRepository, ArticleWriteRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IUserService, UserService>();
 

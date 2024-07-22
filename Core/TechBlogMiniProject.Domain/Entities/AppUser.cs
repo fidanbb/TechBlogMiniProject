@@ -11,5 +11,7 @@ namespace TechBlogMiniProject.Domain.Entities
 	{
         public string Name { get; set; }
         public string Surname { get; set; }
+        public List<Article> Articles { get; set; }
+
     }
 }
