@@ -4,9 +4,13 @@ UI DeployLink: http://fidanfidanfidan-001-site1.ktempurl.com/Default/Index/
 
 Api and UI Deploy needs authorization:
 
+Api:
 username: 11187532
 password: 60-dayfreetrial
 
+UI:
+username: 11187568
+password: 60-dayfreetrial
 
 Users of TechBlog:
 
