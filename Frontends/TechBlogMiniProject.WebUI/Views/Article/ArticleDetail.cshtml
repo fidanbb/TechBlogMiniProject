@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "ArticleDetail";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+    <section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row">
+            @await Component.InvokeAsync("_ArticleDetailComponentPartial", new { id = ViewBag.articleId })
+
+         
+          <div class="col-md-4 sidebar ftco-animate">
+            <div class="sidebar-box">
+              <form action="#" class="search-form">
+                <div class="form-group">
+                  <span class="icon icon-search"></span>
+                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                </div>
+              </form>
+            </div>
+            <div class="sidebar-box ftco-animate">
+              <div class="categories">
+                <h3>Categories</h3>
+                <li><a href="#">AI <span>(12)</span></a></li>
+                <li><a href="#">Blockchain <span>(22)</span></a></li>
+                <li><a href="#">Cybersecurity <span>(37)</span></a></li>
+                <li><a href="#">Quantum Computing <span>(42)</span></a></li>
+                <li><a href="#">5G <span>(14)</span></a></li>
+                <li><a href="#">IoT <span>(140)</span></a></li>
+              </div>
+            </div>
+
+                @await Component.InvokeAsync("_ArticleRecent4ArticlesComponentPartial")
+
+           
+
+       
+          </div>
+
+        </div>
+      </div>
+    </section> <!-- .section -->
+
+

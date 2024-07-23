@@ -1,6 +1,7 @@
 ﻿@model List<GetAllArticlesDto>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "UsersArticles";
     Layout = "~/Views/UILayout/Index.cshtml";
 }
 
@@ -20,14 +21,18 @@
                                 <p class="date ml-auto">@item.CreatedDate.ToString("dd MMM, yyyy")</p>
                             </div>
                             <p class="d-flex mb-2 d-block"><a href="/Article/ArticleDetail/@item.ArticleID/" class="btn btn-primary py-2 w-100 mr-1">Read More</a> </p>
+                            <p class="d-flex mb-0 d-block"><a href="/Article/EditArticle/@item.ArticleID/"  class="btn btn-warning py-2 mr-1">Edit</a> <a href="/Article/DeleteArticle/@item.ArticleID/" class="btn btn-danger py-2 mr-1">Delete</a> </p>
+
                         </div>
                     </div>
                 </div>
 
             }
-         
+
 
         </div>
     </div>
 
 </section>
+
+

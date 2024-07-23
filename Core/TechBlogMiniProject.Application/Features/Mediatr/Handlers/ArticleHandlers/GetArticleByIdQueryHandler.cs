@@ -28,6 +28,7 @@ namespace TechBlogMiniProject.Application.Features.Mediatr.Handlers.ArticleHandl
             return new GetArticleByIdQueryResult
             {
                 ArticleID = value.ArticleID,
+                CategoryID = value.Category.CategoryID,
                 Title = value.Title,
                 Content = value.Content,
                 ImageUrl = value.ImageUrl,

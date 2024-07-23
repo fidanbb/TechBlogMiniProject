@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace TechBlogMiniProject.WebUI.ViewComponents.UILayoutViewComponents
 {
@@ -24,7 +25,10 @@ namespace TechBlogMiniProject.WebUI.ViewComponents.UILayoutViewComponents
                 var fullNameClaim = jwtToken.Claims.FirstOrDefault(claim => claim.Type == "NameSurname");
                 var fullName = fullNameClaim?.Value;
 
+                var userId = jwtToken.Claims.FirstOrDefault(claim => claim.Type == "UserId")?.Value;
+
                 ViewBag.FullName = fullName;
+                ViewBag.UserId = userId;
             }
 
             return View();

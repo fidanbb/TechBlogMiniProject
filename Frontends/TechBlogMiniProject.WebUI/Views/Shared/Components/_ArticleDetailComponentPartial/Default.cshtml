@@ -1,0 +1,25 @@
+﻿@model GetArticleByIdDto
+
+
+<div class="col-md-8 ftco-animate">
+    <h2 class="mb-3" style="text-align:justify">@Model.Title</h2>
+    <div class="block-21 mb-4 d-flex justify-content-evenly">
+
+        <div class="mr-4"><span class="icon-art_track mr-2"></span>@Model.CategoryName</div>
+        <div class="mr-4"><span class="icon-calendar mr-2"></span>@Model.CreatedDate.ToString("dd MMM, yyyy")</div>
+        <div><span class="icon-person"></span> @Model.ArticleWriterFullName</div>
+    
+    </div>
+    <p >
+        <img src="@Model.ImageUrl" alt="" class="img-fluid">
+    </p>
+
+    <p style="text-align:justify">@Model.Content</p>
+   
+
+
+
+
+
+
+</div> <!-- .col-md-8 -->

@@ -14,6 +14,7 @@ namespace TechBlogMiniProject.Application.Features.Mediatr.Results.ArticleResult
         public string ImageUrl { get; set; }
         public DateTime CreatedDate { get; set; }
         public string ArticleWriterFullName { get; set; }
+        public int CategoryID { get; set; }
         public string CategoryName { get; set; }
     }
 }

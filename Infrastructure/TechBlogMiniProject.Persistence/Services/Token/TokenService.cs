@@ -34,10 +34,12 @@ namespace TechBlogMiniProject.Persistence.Services.Token
 			if (!string.IsNullOrWhiteSpace(result.Username))
 			{
 				claims.Add(new Claim("NameSurname", result.Name +" "+ result.Surname));
-			}
+                claims.Add(new Claim("UserId", result.Id));
+
+            }
 
 
-			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtTokenDefaults.Key));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtTokenDefaults.Key));
 
 			var signinCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

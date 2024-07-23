@@ -1,0 +1,22 @@
+﻿@model List<GetLast4ArticlesDtos>
+
+
+<div class="sidebar-box ftco-animate">
+    <h3>Recent Articles</h3>
+
+    @foreach (var item in Model)
+    {
+        <div class="block-21 mb-4 d-flex">
+            <a class="blog-img mr-4" style="background-image: url('@item.ImageUrl');"></a>
+            <div class="text">
+                <h3 class="heading"><a href="/Article/ArticleDetail/@item.ArticleID/">@item.Title.Substring(0, 20)</a></h3>
+                <div class="meta">
+                    <div><span class="icon-calendar"></span>@item.CreatedDate.ToString("dd MMM, yyyy")</div>
+                    <div><span class="icon-person"></span> @item.ArticleWriterFullName</div>
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>

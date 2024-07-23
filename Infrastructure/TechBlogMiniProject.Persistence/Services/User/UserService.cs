@@ -90,6 +90,7 @@ namespace TechBlogMiniProject.Persistence.Services.User
 
 			CheckAppUserDto dto = new()
 			{
+				Id=existUser.Id,
 				Username = existUser.UserName,
 				Roles = userRoles.ToList(),
 				Name = existUser.Name,
