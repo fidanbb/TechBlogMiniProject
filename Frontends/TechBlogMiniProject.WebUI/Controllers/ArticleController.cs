@@ -26,8 +26,9 @@ namespace TechBlogMiniProject.WebUI.Controllers
         {
             ViewBag.v1 = "Articles";
             ViewBag.v2 = "Tech Articles";
-            var client = _httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            //var client = _httpClientFactory.CreateClient();
+            //client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            var client = _httpClientFactory.CreateClient("ApiClient");
             var responseMessage = await client.GetAsync("Articles");
 
             if (responseMessage.IsSuccessStatusCode)
@@ -64,8 +65,9 @@ namespace TechBlogMiniProject.WebUI.Controllers
                 var jwtToken = handler.ReadJwtToken(token);
                 userId = jwtToken.Claims.FirstOrDefault(claim => claim.Type == "UserId")?.Value;
 
-                var client = _httpClientFactory.CreateClient();
-                client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+                //var client = _httpClientFactory.CreateClient();
+                //client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+                var client = _httpClientFactory.CreateClient("ApiClient");
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 var responseMessage = await client.GetAsync($"Articles/GetArticlesByUserId/{userId}");
 
@@ -97,9 +99,10 @@ namespace TechBlogMiniProject.WebUI.Controllers
 				var handler = new JwtSecurityTokenHandler();
 				var jwtToken = handler.ReadJwtToken(token);
 				var userId = jwtToken.Claims.FirstOrDefault(claim => claim.Type == "UserId")?.Value;
-                ViewBag.userId = userId;    
-				var client = _httpClientFactory.CreateClient();
-                client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+                ViewBag.userId = userId;
+                //var client = _httpClientFactory.CreateClient();
+                //            client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+                var client = _httpClientFactory.CreateClient("ApiClient");
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 var responseMessage = await client.GetAsync($"Categories");
 
@@ -132,9 +135,10 @@ namespace TechBlogMiniProject.WebUI.Controllers
 			var userId = jwtToken.Claims.FirstOrDefault(claim => claim.Type == "UserId")?.Value;
 			ViewBag.userId = userId;
 
-			var client = _httpClientFactory.CreateClient();
-			client.BaseAddress = new Uri(_apiSettings.BaseUrl);
-			client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            //var client = _httpClientFactory.CreateClient();
+            //client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            var client = _httpClientFactory.CreateClient("ApiClient");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 			var responseMessage1 = await client.GetAsync($"Categories");
 
 			if (responseMessage1.IsSuccessStatusCode)
@@ -191,9 +195,10 @@ namespace TechBlogMiniProject.WebUI.Controllers
 				var jwtToken = handler.ReadJwtToken(token);
 				var userId = jwtToken.Claims.FirstOrDefault(claim => claim.Type == "UserId")?.Value;
 				ViewBag.userId = userId;
-				var client = _httpClientFactory.CreateClient();
-				client.BaseAddress = new Uri(_apiSettings.BaseUrl);
-				client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                //var client = _httpClientFactory.CreateClient();
+                //client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+                var client = _httpClientFactory.CreateClient("ApiClient");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 				var responseMessage = await client.GetAsync($"Categories");
                 var responseMessage2 = await client.GetAsync($"Articles/GetArticleById/{id}");
 				if (responseMessage.IsSuccessStatusCode && responseMessage2.IsSuccessStatusCode)
@@ -229,9 +234,10 @@ namespace TechBlogMiniProject.WebUI.Controllers
 			var userId = jwtToken.Claims.FirstOrDefault(claim => claim.Type == "UserId")?.Value;
 			ViewBag.userId = userId;
 
-			var client = _httpClientFactory.CreateClient();
-			client.BaseAddress = new Uri(_apiSettings.BaseUrl);
-			client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            //var client = _httpClientFactory.CreateClient();
+            //client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            var client = _httpClientFactory.CreateClient("ApiClient");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 			var responseMessage1 = await client.GetAsync($"Categories");
 
 			if (responseMessage1.IsSuccessStatusCode)
@@ -279,9 +285,10 @@ namespace TechBlogMiniProject.WebUI.Controllers
 			var token = User.Claims.FirstOrDefault(x => x.Type == "techblogtoken")?.Value;
 			if(token is not null)
 			{
-				var client = _httpClientFactory.CreateClient();
-				client.BaseAddress = new Uri(_apiSettings.BaseUrl);
-				client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                //var client = _httpClientFactory.CreateClient();
+                //client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+                var client = _httpClientFactory.CreateClient("ApiClient");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 				var responseMessage = await client.DeleteAsync($"Articles/{id}");
 
 				if (responseMessage.IsSuccessStatusCode)

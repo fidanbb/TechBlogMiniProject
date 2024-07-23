@@ -35,7 +35,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
 			return Ok(value);
 		}
 
-		[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
+		//[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
 		[HttpDelete("{id}")]
 
 		public async Task<IActionResult> RemoveCategory(int id)
@@ -44,7 +44,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
 			return Ok("Category Removed successfully");
 		}
 
-		[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
+		//[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
 
 		[HttpPost]
 
@@ -54,7 +54,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
 			return Ok("Category Added successfully");
 		}
 
-		[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
+		//[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
 
 		[HttpPut]
 

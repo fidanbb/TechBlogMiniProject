@@ -1,0 +1,27 @@
+GitHub: https://github.com/fidanbb/TechBlogMiniProject
+Api Deploy Link: http://fidanfidan-001-site1.atempurl.com/api/categories
+UI DeployLink: http://fidanfidanfidan-001-site1.ktempurl.com/Default/Index/
+
+Api and UI Deploy needs authorization:
+
+username: 11187532
+password: 60-dayfreetrial
+
+
+Users of TechBlog:
+
+1) Fidan Bashirova - Admin, Member
+ email:fidan@gmail.com
+ password:Fidan1234_
+
+2) Andy Brown - Member
+ email:andy@gmail.com
+ password:Andy1234_
+
+3) Azer Cavadov - Member
+ email:azer@gmail.com
+ password:Azer1234_
+
+
+You can also register as a new user.
+Without login you can see all articles and detail of article, after you logged you can see all articles, your articles, post new article, edit and delete your article.

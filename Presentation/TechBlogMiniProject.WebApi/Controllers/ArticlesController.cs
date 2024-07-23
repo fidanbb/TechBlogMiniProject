@@ -44,7 +44,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
             return Ok(values);
         }
 
-        [Authorize(AuthenticationSchemes = "Bearer")]
+        //[Authorize(AuthenticationSchemes = "Bearer")]
 
         [HttpGet("GetArticlesByUserId/{userId}")]
 
@@ -54,7 +54,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
             return Ok(values);
         }
 
-        [Authorize(AuthenticationSchemes = "Bearer")]
+        //[Authorize(AuthenticationSchemes = "Bearer")]
         [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveArticle(int id)
@@ -63,7 +63,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
            return Ok("Article removed Successfully");
         }
 
-        [Authorize(AuthenticationSchemes = "Bearer")]
+        //[Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPost]
 
         public async Task<IActionResult> CreateArticle(CreateArticleCommand command)
@@ -72,7 +72,7 @@ namespace TechBlogMiniProject.WebApi.Controllers
             return Ok("Article created Successfully");
         }
 
-        [Authorize(AuthenticationSchemes = "Bearer")]
+        //[Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPut]
 
         public async Task<IActionResult> UpdateArticle(UpdateArticleCommand command)

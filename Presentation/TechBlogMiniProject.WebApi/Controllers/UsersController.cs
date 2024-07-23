@@ -6,7 +6,7 @@ using TechBlogMiniProject.Application.Services.User;
 
 namespace TechBlogMiniProject.WebApi.Controllers
 {
-	[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
+	//[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
 	[Route("api/[controller]/[action]")]
 	[ApiController]
 	public class UsersController : ControllerBase

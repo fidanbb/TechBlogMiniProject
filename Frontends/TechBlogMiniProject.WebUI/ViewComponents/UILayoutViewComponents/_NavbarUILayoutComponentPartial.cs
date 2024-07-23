@@ -29,6 +29,7 @@ namespace TechBlogMiniProject.WebUI.ViewComponents.UILayoutViewComponents
 
                 ViewBag.FullName = fullName;
                 ViewBag.UserId = userId;
+                ViewBag.Token=token;
             }
 
             return View();

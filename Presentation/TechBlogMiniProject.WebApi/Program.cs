@@ -18,6 +18,8 @@ using TechBlogMiniProject.Persistence.Services.Token;
 using TechBlogMiniProject.WebApi.Injections;
 using TechBlogMiniProject.Application.Repositories.ArticleRepositories;
 using TechBlogMiniProject.Persistence.Repositories.ArticleRepositories;
+using System.Net.Http.Headers;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,9 +32,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 	opt.RequireHttpsMetadata = false;
 	opt.TokenValidationParameters = new TokenValidationParameters
 	{
-		ValidAudience = JwtTokenDefaults.ValidAudience,
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidAudience = JwtTokenDefaults.ValidAudience,
 		ValidIssuer = JwtTokenDefaults.ValidIssuer,
-		ClockSkew = TimeSpan.Zero,
+		ClockSkew = TimeSpan.FromMinutes(10),
 		IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtTokenDefaults.Key)),
 		ValidateLifetime = true,
 		ValidateIssuerSigningKey = true
@@ -40,10 +44,21 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 	};
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
 builder.Services.AddDbContext<TechBlogContext>();
 
 builder.Services.AddIdentity<AppUser, IdentityRole>()
 				.AddEntityFrameworkStores<TechBlogContext>();
+
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -96,9 +111,10 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
-
+app.UseCors("AllowAllOrigins"); // Use the configured CORS policy
 app.UseHttpsRedirection();
 
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 

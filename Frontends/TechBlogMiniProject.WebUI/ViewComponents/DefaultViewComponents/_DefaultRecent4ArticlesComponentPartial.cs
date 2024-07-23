@@ -18,8 +18,9 @@ namespace TechBlogMiniProject.WebUI.ViewComponents.DefaultViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var client = _httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            //var client = _httpClientFactory.CreateClient();
+            //client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            var client = _httpClientFactory.CreateClient("ApiClient");
             var responseMessage = await client.GetAsync("Articles/GetRecent4Articles");
 
             if (responseMessage.IsSuccessStatusCode)

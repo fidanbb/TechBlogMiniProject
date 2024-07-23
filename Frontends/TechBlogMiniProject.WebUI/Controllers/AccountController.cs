@@ -43,8 +43,9 @@ namespace TechBlogMiniProject.WebUI.Controllers
             }
 
 
-            var client = _httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            //var client = _httpClientFactory.CreateClient();
+            //client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            var client = _httpClientFactory.CreateClient("ApiClient");
             var content = new StringContent(JsonSerializer.Serialize(loginDto), Encoding.UTF8, "application/json");
 
             var response = await client.PostAsync("Users/SignIn", content);
@@ -109,8 +110,9 @@ namespace TechBlogMiniProject.WebUI.Controllers
                 return View(registerDto);
             }
 
-            var client = _httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            //var client = _httpClientFactory.CreateClient();
+            //client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            var client = _httpClientFactory.CreateClient("ApiClient");
             var jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(registerDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync("Users/SignUp", stringContent);

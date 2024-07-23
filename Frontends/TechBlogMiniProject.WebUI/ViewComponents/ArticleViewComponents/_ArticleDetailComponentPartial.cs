@@ -18,8 +18,10 @@ namespace TechBlogMiniProject.WebUI.ViewComponents.ArticleViewComponents
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {
             ViewBag.articleId = id;
-            var client = _httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            //var client = _httpClientFactory.CreateClient();
+            //client.BaseAddress = new Uri(_apiSettings.BaseUrl);
+            var client = _httpClientFactory.CreateClient("ApiClient");
+          
             var responseMessage = await client.GetAsync($"Articles/GetArticleById/{id}");
 
             if (responseMessage.IsSuccessStatusCode)
